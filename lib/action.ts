@@ -7,8 +7,10 @@ interface AvailabilityFormData {
     email: string;
     zipcode: string;
     eventDate: string;
+    eventTime: string;
 }
 
-export const handleAvailabilitySubmission = async (): Promise<void> => {
+export const handleAvailabilitySubmission = async (data:AvailabilityFormData): Promise<void> => {
     await connectToDb()
+    console.log(data)
 }
