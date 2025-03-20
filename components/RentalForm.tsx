@@ -33,15 +33,11 @@ export default function RentalForm(){
                     <input name="email" className="p-1 rounded-md border border-zinc-200"></input>
                 </div>
                 <div className="">
-                    <label>Event Zipcode: </label>
-                    <input name="zipcode" className="p-1 rounded-md border border-zinc-200" type="number"></input>
-                </div>
-                <div className="">
                     <label>Event Date: </label>
                     <input name="eventDate" className="p-1 rounded-md border border-zinc-200" type="date"></input>
                 </div>
                 <div className="">
-                    <label>Event Time: </label>
+                    <label>Delivery Time: </label>
                     <select name="eventTime">
                     <option disabled> choose delivery time </option>
                         <option value="5:00 AM">5:00 AM</option>

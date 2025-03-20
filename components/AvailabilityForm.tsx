@@ -2,6 +2,10 @@
 import { connectToDb } from '@/lib/utils';
 import React, { FormEvent } from 'react';
 import { handleAvailabilitySubmission } from '@/lib/action';
+import { useRouter } from 'next/navigation';
+
+export default function AvailabilityForm() {
+const router = useRouter()
 
 const handleSubmit = async (event:FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
@@ -9,15 +13,12 @@ const handleSubmit = async (event:FormEvent<HTMLFormElement>): Promise<void> => 
     const data = {
         firstName: formData.get('firstName') as string,
         email: formData.get('email') as string,
-        zipcode: formData.get('zipcode') as string,
-        eventDate: formData.get('eventDate') as string,
-        eventTime: formData.get('eventTime') as string
     };
-    handleAvailabilitySubmission(data)
-
+    //handleAvailabilitySubmission(data)
+    router.push("/booking")
 }
 
-export default function AvailabilityForm() {
+
     return (
         <form onSubmit={handleSubmit} className="bg-zinc-950 rounded-xl flex flex-col gap-7.5 p-5 px-20 z-50 border border-zinc-200 items-center">
             <h1 className="text-center text-lg font-semibold">Fill out the form below to see if a chair is available for your event date.</h1>
@@ -30,33 +31,13 @@ export default function AvailabilityForm() {
                     <label>Email: </label>
                     <input name="email" className="p-1 rounded-md border border-zinc-200"></input>
                 </div>
-                <div className="">
-                    <label>Event Zipcode: </label>
-                    <input name="zipcode" className="p-1 rounded-md border border-zinc-200" type="number"></input>
+                <div>
+                    <input type="checkbox" name="check1" value="true"></input>
+                    <label> My event is one of the following counties Cobb, Fulton, DeKalb, Fayette, Clayton, Gwinnett or Cherokee.</label>    
                 </div>
-                <div className="">
-                    <label>Event Date: </label>
-                    <input name="eventDate" className="p-1 rounded-md border border-zinc-200" type="date"></input>
-                </div>
-                <div className="">
-                    <label>Event Time: </label>
-                    <select name="eventTime">
-                    <option disabled> choose delivery time </option>
-                        <option value="5:00 AM">5:00 AM</option>
-                        <option value="6:00 AM">6:00 AM</option>
-                        <option value="7:00 AM">7:00 AM</option>
-                        <option value="8:00 AM">8:00 AM</option>
-                        <option value="9:00 AM">9:00 AM</option>
-                        <option value="10:00 AM">10:00 AM</option>
-                        <option value="11:00 AM">11:00 AM</option>
-                        <option value="12:00 PM">12:00 PM</option>
-                        <option value="1:00 PM">1:00 PM</option>
-                        <option value="2:00 PM">2:00 PM</option>
-                        <option value="3:00 PM">3:00 PM</option>
-                        <option value="4:00 PM">4:00 PM</option>
-                        <option value="5:00 PM">5:00 PM</option>
-                        <option value="6:00 PM">6:00 PM</option>
-                    </select>
+                <div>
+                    <input type="checkbox" name="check2" value="true"></input>
+                    <label> I understand the only chair color available is white with gold trim.</label>    
                 </div>
             </div>
             <div className="flex items-center">
