@@ -20,8 +20,8 @@ const handleSubmit = async (event:FormEvent<HTMLFormElement>): Promise<void> => 
 
 
     return (
-        <form onSubmit={handleSubmit} className="bg-zinc-950 rounded-xl flex flex-col gap-7.5 p-5 px-20 z-50 border border-zinc-200 items-center">
-            <h1 className="text-center text-lg font-semibold">Fill out the form below to see if a chair is available for your event date.</h1>
+        <form onSubmit={handleSubmit} className="bg-zinc-950 rounded-xl flex flex-col gap-7.5 p-5 px-10 sm:px-20 z-50 border border-zinc-200 items-center">
+            <h1 className="text-center text-lg font-semibold w-full">Fill out the form below to see if a chair is available for your event date.</h1>
             <div className="flex flex-col gap-5">
                 <div className="">
                     <label>First Name: </label>
@@ -41,7 +41,7 @@ const handleSubmit = async (event:FormEvent<HTMLFormElement>): Promise<void> => 
                 </div>
             </div>
             <div className="flex items-center">
-                <button type="submit" className="rounded-xl bg-gradient-to-r from-zinc-200 to-indigo-300 text-black text-lg p-3 border border-indigo-800 hover:shadow hover:shadow-indigo-200">Check Availability</button>
+                <button type="submit" className="rounded-xl bg-gradient-to-r from-zinc-200 to-indigo-300 text-black text-lg p-3 border border-indigo-800 hover:shadow hover:shadow-indigo-200 font-bold">Check Availability</button>
             </div>
         </form>
     )
