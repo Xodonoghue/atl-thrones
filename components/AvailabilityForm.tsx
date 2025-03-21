@@ -1,7 +1,7 @@
 "use client"
 import { connectToDb } from '@/lib/utils';
 import React, { FormEvent } from 'react';
-import { handleAvailabilitySubmission } from '@/lib/action';
+import { saveLeadInfo } from '@/lib/action';
 import { useRouter } from 'next/navigation';
 
 export default function AvailabilityForm() {
@@ -14,7 +14,7 @@ const handleSubmit = async (event:FormEvent<HTMLFormElement>): Promise<void> => 
         firstName: formData.get('firstName') as string,
         email: formData.get('email') as string,
     };
-    //handleAvailabilitySubmission(data)
+    saveLeadInfo(data)
     router.push("/booking")
 }
 

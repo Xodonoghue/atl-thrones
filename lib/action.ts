@@ -1,13 +1,10 @@
 "use server"
 import { connectToDb } from "./utils"
-import { Calendar } from "./models";
+import { Calendar,Lead } from "./models";
 
 interface AvailabilityFormData {
     firstName: string;
     email: string;
-    zipcode: string;
-    eventDate: string;
-    eventTime: string;
 }
 
 interface RentalFormData {
@@ -19,17 +16,10 @@ interface RentalFormData {
     eventLocation: string
 }
 
-export const handleAvailabilitySubmission = async (data:AvailabilityFormData): Promise<void> => {
+export const saveLeadInfo = async (data:AvailabilityFormData): Promise<void> => {
     await connectToDb()
-    const newStartDate = new Date(data.eventDate + ' ' + data.eventTime)
-    const cal = await Calendar.findById('67d9db952f6f12d8f8c5dc8b')
-    let available = true
-    for (const event of cal.events) {
-        if (event.startDate < newStartDate && newStartDate < event.endDate) {
-            available = false
-        }
-    }
-    console.log(data)
+    const lead = new Lead({firstName:data.firstName, email:data.email})
+    await lead.save()
 }
 
 export const createRental = async(data:RentalFormData): Promise<void> => {
