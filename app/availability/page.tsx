@@ -4,8 +4,9 @@ export default function Page() {
 
 
     return (
-        <main className=" min-h-screen flex flex-col bg-gradient-to-b from-black to-indigo-800 items-center justify-center">
-            <div className="flex w-11/12 sm:w-4/5 md:w-7/12 lg:w-5/12">
+        <main className="min-h-screen flex flex-col bg-gradient-to-b from-black to-indigo-800 items-center justify-center">
+            <div className="flex flex-col w-full">
+            <h1 className="text-3xl sm:text-4xl text-center font-bold pb-5">Availability</h1>
                 <AvailabilityForm/>
             </div>
         </main>
