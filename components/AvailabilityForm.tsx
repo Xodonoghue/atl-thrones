@@ -40,7 +40,7 @@ const handleSubmit = async (event:FormEvent<HTMLFormElement>): Promise<void> => 
                 </div>
             </div>
             <div className="flex justify-center mt-4">
-                <button type="submit" className="bg-gradient-to-r from-indigo-500 to-indigo-400 hover:from-indigo-400 hover:to-indigo-300 text-white border border-white/50 font-semibold text-2xl font-bold p-4 rounded-2xl hover:bg-indigo-300">Check Availability</button>
+                <button type="submit" className="bg-gradient-to-r from-indigo-500 to-indigo-400 hover:from-indigo-400 hover:to-indigo-300 text-white border border-indigo-300 font-semibold text-xl sm:text-2xl font-bold p-4 rounded-2xl hover:bg-indigo-300">Check Availability</button>
             </div>
         </form>
     )
