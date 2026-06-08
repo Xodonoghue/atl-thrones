@@ -55,8 +55,8 @@ export default function Home() {
           </Link>
 
           <h1 className="mt-8 text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl">
-            Make any celebration
-            <br /> feel truly royal.
+            Make Any Celebration
+            <br /> Extra Special.
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-lg text-neutral-400">
@@ -124,26 +124,11 @@ export default function Home() {
               key={f.title}
               className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900"
             >
-              {f.image ? (
-                <img
-                  src={f.image}
-                  alt={f.title}
-                  className="aspect-[16/10] w-full object-cover"
-                />
-              ) : (
-                <div
-                  className={`flex aspect-[16/10] w-full items-center justify-center bg-gradient-to-br ${f.tint}`}
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-16 w-16 text-gold-500/80"
-                    fill="currentColor"
-                    aria-hidden
-                  >
-                    <path d="M2 7l4 3 6-7 6 7 4-3-2 12H4L2 7z" />
-                  </svg>
-                </div>
-              )}
+              <img
+                src={f.image}
+                alt={f.title}
+                className="aspect-[16/10] w-full object-cover"
+              />
               <div className="p-7">
                 <h3 className="text-lg font-bold text-white">{f.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-neutral-400">
@@ -262,7 +247,7 @@ export default function Home() {
       {/* ===== Footer CTA ===== */}
       <section className="mx-auto max-w-6xl px-5 py-20 text-center">
         <h2 className="mx-auto max-w-2xl text-4xl font-extrabold tracking-tight sm:text-5xl">
-          Ready to make it royal?
+          Ready to add the perfect touch?
         </h2>
         <p className="mx-auto mt-4 max-w-md text-lg text-neutral-400">
           See if your date is available and reserve your throne in minutes.

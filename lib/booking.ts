@@ -1,6 +1,6 @@
 // Shared, framework-agnostic booking config & helpers (safe on client & server).
 
-export const RENTAL_PRICE_CENTS = 19900; // $199.00 per chair
+export const RENTAL_PRICE_CENTS = 17500; // $175.00 per chair
 export const RENTAL_DURATION_HOURS = 6;
 export const ALLOWED_CHAIR_COUNTS = [1, 2] as const;
 export const MAX_CHAIRS = 2;

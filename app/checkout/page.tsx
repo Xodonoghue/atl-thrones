@@ -23,7 +23,7 @@ export default async function Page({
           Step 3 of 3 — Checkout
         </span>
         <h1 className="mt-7 text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl">
-          Almost royal.
+          Almost done.
         </h1>
         <p className="mt-5 max-w-xl text-lg text-neutral-400">
           Confirm your details and pay securely to reserve your throne.

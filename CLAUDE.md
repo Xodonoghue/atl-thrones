@@ -12,7 +12,7 @@ Atlanta (Fulton, DeKalb, Cobb, Gwinnett, Clayton, Fayette, Cherokee counties). V
 check availability, pick a date/time, pay via Stripe, and receive a confirmation. The
 owner gets notified and a Google Calendar event is created.
 
-Single product: a white-and-gold throne chair, **$199.00/chair** (`RENTAL_PRICE_CENTS`),
+Single product: a white-and-gold throne chair, **$175.00/chair** (`RENTAL_PRICE_CENTS`),
 **1 or 2 chairs max**, **6-hour rental window** (`RENTAL_DURATION_HOURS`). Free delivery &
 setup, no deposit.
 
