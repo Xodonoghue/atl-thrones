@@ -92,7 +92,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-16">
         <div className="rounded-2xl bg-neutral-900 px-6 py-10">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400">
-            We deliver all over the grater atlanta area
+            We deliver all over the greater atlanta area
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {occasions.map((o) => (
