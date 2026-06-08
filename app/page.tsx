@@ -1,89 +1,310 @@
 import React from "react";
 import Link from "next/link";
 
+const occasions = [
+  "Fulton",
+  "Cobb",
+  "Gwinnett",
+  "Dekalb",
+  "Clayton",
+  "Fayette",
+  "Forsyth",
+  "Cherokee"
+];
+
+const features = [
+  {
+    title: "Free delivery & setup.",
+    body: "We deliver, place, and collect your throne for free across metro Atlanta — you don't lift a thing.",
+    image: "/thrones/throne-white.jpg",
+  },
+  {
+    title: "Booked in minutes.",
+    body: "Check a date, reserve online, and we'll handle the rest. No deposits, no hassle.",
+    image: "/thrones/throne-gold.jpg",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "The throne was the centerpiece of my daughter's quinceañera. It arrived early, setup was effortless, and every photo looked absolutely regal.",
+    name: "Marisol R.",
+    role: "Quinceañera · Marietta",
+  },
+  {
+    quote:
+      "Booked it for our wedding and it exceeded every expectation. Spotless, gorgeous, and the delivery team was so professional. Worth every penny.",
+    name: "Jordan & Tia",
+    role: "Wedding · Atlanta",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="container relative mx-auto p-2">
-      {/* Header */}
-      <section className="text-center py-20 px-4">
-        <div className="inline-block bg-gradient-to-r from-pink-600 to-pink-400 border border-pink-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide mb-4">
-          Atlanta's #1 Throne Chair Rental Business
-        </div>
-        <h1 className="max-w-5xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 max-w-2xl mx-auto">Make Any Celebration <br /> Even More Special
-        </h1>
-        <p className="text-gray-400 max-w-4xl text-lg sm:text-xl mx-auto mt-4">
-          ATL Throne Chairs elevates your events with luxury throne chair rentals
-          featuring hassle-free delivery and stunning style.
-        </p>
-        <form className="flex justify-center gap-4 pt-8">
-          <Link href="/availability" className="bg-gradient-to-r from-indigo-500 to-indigo-400 hover:from-indigo-400 hover:to-indigo-300 text-white border border-indigo-300  font-semibold text-lg sm:text-2xl font-bold p-4 sm:p-6 rounded-2xl hover:bg-indigo-300">
-            Check Availablity
+    <main className="bg-neutral-950 text-neutral-100">
+      {/* ===== Hero ===== */}
+      <section className="mx-auto max-w-6xl px-5 pt-20 pb-12 sm:pt-28">
+        <div className="text-center">
+          <Link
+            href="/availability"
+            className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-3 py-1 text-xs font-semibold text-gold-400"
+          >
+            Atlanta&apos;s #1 throne chair rental
+            <span aria-hidden>→</span>
           </Link>
-        </form>
-        <div className="flex max-w-2xl items-center justify-center mt-8 mx-auto w-full">
+
+          <h1 className="mt-8 text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl">
+            Make any celebration
+            <br /> feel truly royal.
+          </h1>
+
+          <p className="mx-auto mt-6 max-w-xl text-lg text-neutral-400">
+            ATL Thrones elevates your event with luxury white-and-gold throne
+            chair rentals — featuring hassle-free delivery and unforgettable
+            style.
+          </p>
+
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <Link
+              href="/availability"
+              className="btn-gold rounded-xl px-7 py-3.5 text-base font-semibold"
+            >
+              Check availability
+            </Link>
+            <p className="text-sm text-neutral-400">
+              Free delivery &amp; setup — no deposit required.
+            </p>
+          </div>
+
+          {/* Image below the CTA, in its original aspect ratio */}
+          <div className="mx-auto mt-12 w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.45)]">
             <img
-            src="https://otds17egwq.ufs.sh/f/zMShoxtoCQOcL7YIk2qmKNn89WqR6Z4sflaJib3IFoQjVBuY"
-            alt="White Throne Chair"
-            className="w-full rounded-xl shadow-lg"
+              src="/thrones/throne-white.jpg"
+              alt="White and gold throne chair styled at an Atlanta event"
+              className="aspect-[5/3] w-full object-cover object-[90%_100%]"
             />
+          </div>
         </div>
-
       </section>
 
-      <section className="py-28 lg:py-40">
-        <div className="flex text-center justify-center">
-        <span className="bg-gray-800 text-xs px-3 py-1 border border-indigo-300 rounded-full uppercase tracking-wide text-indigo-300">
-          Areas We Serve
-        </span>
+      {/* ===== Occasion band ===== */}
+      <section className="mx-auto max-w-6xl px-5 py-16">
+        <div className="rounded-2xl bg-neutral-900 px-6 py-10">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400">
+            We deliver all over the grater atlanta area
+          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {occasions.map((o) => (
+              <span
+                key={o}
+                className="text-lg font-semibold text-neutral-500 transition-colors hover:text-neutral-200"
+              >
+                {o}
+              </span>
+            ))}
+          </div>
         </div>
-
-        
-        <div className="text-center text-4xl md:text-6xl lg:text-7xl font-medium mt-8">
-            <span className="text-gray-500">We </span>
-            <span className="text-indigo-400">deliver for free</span> 
-            <span className="text-gray-500"> throughout the following counties</span>{" "}
-            <span className="text-indigo-400">{'Fulton, Dekalb, Cobb, Gwinnett, Clayton, Fayette & Cherokee.'}</span>{" "}
-        </div>
-        </section>
-
-      {/* Feature Section */}
-      <section className="py-24 text-center px-4">
-        <span className="bg-gray-800 text-xs px-3 py-1 rounded-full uppercase tracking-wide border border-indigo-300 text-indigo-300">
-          Who We Are
-        </span>
-        <h2 className="text-5xl sm:text-6xl font-medium mt-8">About <span className="text-indigo-400">Us</span>
-        </h2>
-        <p className="mt-4 text-lg text-gray-500">We're ATL Throne Chairs, the premier throne chair rental service catering to all your event needs across the greater Atlanta area. We are dedicated to delivering elegance and sophistication right to your doorstep. At ATL Throne Chairs, we understand that every event is unique and deserves the royal treatment. Whether you're planning a wedding, a birthday celebration, or any special occasion, our throne chairs are the perfect centerpiece to elevate your event's ambiance. Our commitment to exceptional customer service and timely delivery ensures that your rentals arrive in pristine condition, ready to impress your guests. Let us help you turn your next event into a majestic celebration. Trust ATL Throne Chairs to add that touch of royalty to your special day.</p>
       </section>
 
-      <section className="py-24 text-center px-4">
-        <div className="flex flex-col bg-black rounded-lg border bg-gray-950 border border-gray-700 max-w-7xl mx-auto p-8 items-center">
-            <div className="flex flex-col md:flex-row w-full justify-between items-center">
-                <div>
-                <h3 className="text-3xl sm:text-4xl font-medium max-w-2xl text-center">Check to see if we have a chair available for your event</h3>
-                    <p className="text-gray-400 mt-4 mb-8 text-lg max-w-2xl">
-                        Click the below and let us know when and where your event is located so we can see if we have a chair available.
-                    </p>
-                    <Link href="/availability" className="bg-indigo-500 text-white font-semibold px-6 py-4 rounded-full hover:bg-indigo-400 text-lg sm:text-xl">
-                        Check Availability
-                    </Link>
-                </div>
-                <div className="hidden md:flex">
+      {/* ===== Feature section ===== */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+            Everything your event needs.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-neutral-400">
+            From the perfect chair to white-glove delivery, we handle every detail.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900"
+            >
+              {f.image ? (
                 <img
-                src="https://otds17egwq.ufs.sh/f/zMShoxtoCQOc3F8vQCLGugE4t2q1jpT9dvkJOLoiZyMmCfzX"
-                alt="Gold Throne Chair"
-                className="w-[450px] rounded-xl shadow-lg mt-4"
+                  src={f.image}
+                  alt={f.title}
+                  className="aspect-[16/10] w-full object-cover"
                 />
+              ) : (
+                <div
+                  className={`flex aspect-[16/10] w-full items-center justify-center bg-gradient-to-br ${f.tint}`}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-16 w-16 text-gold-500/80"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M2 7l4 3 6-7 6 7 4-3-2 12H4L2 7z" />
+                  </svg>
                 </div>
+              )}
+              <div className="p-7">
+                <h3 className="text-lg font-bold text-white">{f.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-neutral-400">
+                  {f.body}
+                </p>
+              </div>
             </div>
-            
+          ))}
         </div>
-        </section>
+      </section>
 
-      {/* Footer */}
-      <footer className="mt-32 py-10 text-center border-t border-gray-800 text-gray-500 text-sm">
-        © 2025 ATL Throne Chairs. All rights reserved.
+      {/* ===== Image feature row ===== */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+            Make it unforgettable.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-neutral-400">
+            A throne chair is more than a seat — it&apos;s the moment everyone
+            remembers and photographs.
+          </p>
+        </div>
+
+        <div className="mt-14 grid items-center gap-10 md:grid-cols-2">
+          <div className="overflow-hidden rounded-2xl border border-white/10 shadow-lg">
+            <img
+              src="/thrones/throne-gold.jpg"
+              alt="Throne chair at a rooftop birthday celebration"
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </div>
+          <div>
+            <ul className="space-y-7">
+              {[
+                {
+                  h: "Built for the spotlight.",
+                  p: "Tall, ornate, and finished in gold — designed to anchor your backdrop and steal every photo.",
+                },
+                {
+                  h: "Delivered on your schedule.",
+                  p: "Tell us when and where. We arrive on time, set up, and return after your event.",
+                },
+                {
+                  h: "Serving all of metro Atlanta.",
+                  p: "Free delivery throughout Fulton, DeKalb, Cobb, Gwinnett, Clayton, Fayette & Cherokee.",
+                },
+              ].map((item) => (
+                <li key={item.h} className="flex gap-4">
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-400">
+                    <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="currentColor" aria-hidden>
+                      <path d="M16.7 5.3a1 1 0 010 1.4l-7 7a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L9 11.6l6.3-6.3a1 1 0 011.4 0z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h3 className="font-bold text-white">{item.h}</h3>
+                    <p className="mt-1 text-[15px] leading-relaxed text-neutral-400">
+                      {item.p}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Testimonials ===== */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="grid gap-6 md:grid-cols-2">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="rounded-2xl border border-white/10 bg-neutral-900 p-8"
+            >
+              <blockquote className="text-lg leading-relaxed text-neutral-200">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-sm font-bold text-white">
+                  {t.name.charAt(0)}
+                </span>
+                <div>
+                  <div className="text-sm font-semibold text-white">{t.name}</div>
+                  <div className="text-sm text-neutral-400">{t.role}</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== Gold accent block ===== */}
+      <section className="mx-auto max-w-6xl px-5 py-16">
+        <div className="rounded-3xl bg-gradient-to-br from-gold-400 to-gold-600 px-6 py-20 text-center">
+          <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-black/10 text-neutral-950">
+            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden>
+              <path d="M2 7l4 3 6-7 6 7 4-3-2 12H4L2 7z" />
+            </svg>
+          </span>
+          <h2 className="mt-6 text-4xl font-extrabold tracking-tight text-neutral-950 sm:text-5xl">
+            Reserved just for you.
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-lg text-neutral-900/80">
+            Once your date is booked, your throne is held exclusively for your
+            event — sanitized, set up, and ready to impress.
+          </p>
+          <Link
+            href="/availability"
+            className="mt-8 inline-block rounded-xl bg-neutral-950 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-neutral-800"
+          >
+            Check your date
+          </Link>
+        </div>
+      </section>
+
+      {/* ===== Footer CTA ===== */}
+      <section className="mx-auto max-w-6xl px-5 py-20 text-center">
+        <h2 className="mx-auto max-w-2xl text-4xl font-extrabold tracking-tight sm:text-5xl">
+          Ready to make it royal?
+        </h2>
+        <p className="mx-auto mt-4 max-w-md text-lg text-neutral-400">
+          See if your date is available and reserve your throne in minutes.
+        </p>
+        <Link
+          href="/availability"
+          className="btn-gold mt-8 inline-block rounded-xl px-8 py-4 text-base font-semibold"
+        >
+          Check availability
+        </Link>
+        <p className="mt-3 text-sm text-neutral-400">
+          Free delivery &amp; setup — no deposit required.
+        </p>
+      </section>
+
+      {/* ===== Footer bar ===== */}
+      <footer className="border-t border-white/10 bg-neutral-950">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 sm:flex-row">
+          <div className="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" className="h-5 w-5 text-gold-400" fill="currentColor" aria-hidden>
+              <path d="M2 7l4 3 6-7 6 7 4-3-2 12H4L2 7z" />
+            </svg>
+            <span className="text-[15px] font-extrabold tracking-tight text-white">
+              ATL THRONES
+            </span>
+          </div>
+          <nav className="flex items-center gap-7 text-sm text-neutral-400">
+            <Link href="/info" className="transition-colors hover:text-white">
+              About
+            </Link>
+            <Link href="/availability" className="transition-colors hover:text-white">
+              Availability
+            </Link>
+            <Link href="/booking" className="transition-colors hover:text-white">
+              Book
+            </Link>
+          </nav>
+          <p className="text-sm text-neutral-400">
+            © 2025 ATL Throne Chairs.
+          </p>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
